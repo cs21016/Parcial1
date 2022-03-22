@@ -124,6 +124,11 @@ public class Login extends javax.swing.JFrame {
         userTxt.setForeground(new java.awt.Color(204, 204, 204));
         userTxt.setText("Ingrese su nombre de usuario");
         userTxt.setBorder(null);
+        userTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                userTxtMousePressed(evt);
+            }
+        });
         bg.add(userTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 370, 20));
         bg.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 380, 10));
 
@@ -136,7 +141,12 @@ public class Login extends javax.swing.JFrame {
         passTxt.setText("********");
         passTxt.setToolTipText("");
         passTxt.setBorder(null);
-        bg.add(passTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, 20));
+        passTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                passTxtMousePressed(evt);
+            }
+        });
+        bg.add(passTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 380, 20));
         bg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 380, 10));
 
         loginBtn.setBackground(new java.awt.Color(0, 134, 190));
@@ -146,6 +156,14 @@ public class Login extends javax.swing.JFrame {
         loginBtnTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         loginBtnTxt.setText("ENTRAR");
         loginBtnTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        loginBtnTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                loginBtnTxtMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                loginBtnTxtMouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout loginBtnLayout = new javax.swing.GroupLayout(loginBtn);
         loginBtn.setLayout(loginBtnLayout);
@@ -203,6 +221,31 @@ public class Login extends javax.swing.JFrame {
         exitBtn.setBackground(Color.white);
         exitTxt.setForeground(Color.black);
     }//GEN-LAST:event_exitTxtMouseExited
+
+    //Repetir el mismo proceso hecho en el botón Exit solo que en cambio ahora sea en el botón Entrar
+    private void loginBtnTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnTxtMouseEntered
+        loginBtn.setBackground(new Color (0, 156, 223));
+    }//GEN-LAST:event_loginBtnTxtMouseEntered
+
+    private void loginBtnTxtMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnTxtMouseExited
+        loginBtn.setBackground(new Color (0, 134, 190));
+    }//GEN-LAST:event_loginBtnTxtMouseExited
+
+    private void userTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userTxtMousePressed
+        //Comando setTxt para quitar (usuario) y reestablecer (contraseña) el texto
+        userTxt.setText("");
+        userTxt.setForeground(Color.black);
+        passTxt.setText("********");
+        passTxt.setForeground(Color.gray);
+    }//GEN-LAST:event_userTxtMousePressed
+
+    private void passTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passTxtMousePressed
+        //Repetimos lo anterior hecho solo que ahora se quita la contraseña y se reestablece el usuario
+        userTxt.setText("Ingrese su nombre de usuario");
+        userTxt.setForeground(Color.gray);
+        passTxt.setText("");
+        passTxt.setForeground(Color.black);
+    }//GEN-LAST:event_passTxtMousePressed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
