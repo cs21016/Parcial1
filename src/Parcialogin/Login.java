@@ -17,16 +17,63 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
+        logoname = new javax.swing.JLabel();
         citybg = new javax.swing.JLabel();
+        favicon = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
+        userLabel = new javax.swing.JLabel();
+        userTxt = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        passLabel = new javax.swing.JLabel();
+        passTxt = new javax.swing.JPasswordField();
+        jSeparator2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1155, 590));
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
+        bg.setName(""); // NOI18N
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        logoname.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        logoname.setForeground(new java.awt.Color(255, 255, 255));
+        logoname.setText("UES FMOcc");
+        bg.add(logoname, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 350, -1, -1));
 
         citybg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Parcial/imagenes/tienda.png"))); // NOI18N
         bg.add(citybg, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 0, 752, 547));
+
+        favicon.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        favicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Parcial/imagenes/favicon.png"))); // NOI18N
+        favicon.setText("FMOcc");
+        bg.add(favicon, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 120, 40));
+
+        title.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        title.setText("INICIAR SESIÓN");
+        bg.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 170, 30));
+
+        userLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        userLabel.setText("USUARIO");
+        bg.add(userLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+
+        userTxt.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        userTxt.setForeground(new java.awt.Color(204, 204, 204));
+        userTxt.setText("Ingrese su nombre de usuario");
+        userTxt.setBorder(null);
+        bg.add(userTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 370, 20));
+        bg.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 380, 10));
+
+        passLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        passLabel.setText("CONTRASEÑA");
+        bg.add(passLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
+
+        passTxt.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        passTxt.setForeground(new java.awt.Color(204, 204, 204));
+        passTxt.setText("********");
+        passTxt.setToolTipText("");
+        passTxt.setBorder(null);
+        bg.add(passTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, 20));
+        bg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 380, 10));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,5 +127,14 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JLabel citybg;
+    private javax.swing.JLabel favicon;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel logoname;
+    private javax.swing.JLabel passLabel;
+    private javax.swing.JPasswordField passTxt;
+    private javax.swing.JLabel title;
+    private javax.swing.JLabel userLabel;
+    private javax.swing.JTextField userTxt;
     // End of variables declaration//GEN-END:variables
 }
