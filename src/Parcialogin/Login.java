@@ -157,6 +157,9 @@ public class Login extends javax.swing.JFrame {
         loginBtnTxt.setText("ENTRAR");
         loginBtnTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         loginBtnTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                loginBtnTxtMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 loginBtnTxtMouseEntered(evt);
             }
@@ -246,6 +249,11 @@ public class Login extends javax.swing.JFrame {
         passTxt.setText("");
         passTxt.setForeground(Color.black);
     }//GEN-LAST:event_passTxtMousePressed
+
+    private void loginBtnTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnTxtMouseClicked
+        //Mostrar una alerta cuando entre el mouse sobre el botón
+        javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuario: " + userTxt.getText() + "\nContraseña: " + String.valueOf(passTxt.getPassword()), "LOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_loginBtnTxtMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
