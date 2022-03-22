@@ -27,9 +27,14 @@ public class Login extends javax.swing.JFrame {
         passLabel = new javax.swing.JLabel();
         passTxt = new javax.swing.JPasswordField();
         jSeparator2 = new javax.swing.JSeparator();
+        loginBtn = new javax.swing.JPanel();
+        loginBtnTxt = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(1155, 590));
+        setResizable(false);
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setName(""); // NOI18N
@@ -74,6 +79,26 @@ public class Login extends javax.swing.JFrame {
         passTxt.setBorder(null);
         bg.add(passTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, 20));
         bg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 380, 10));
+
+        loginBtn.setBackground(new java.awt.Color(0, 134, 190));
+
+        loginBtnTxt.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        loginBtnTxt.setForeground(new java.awt.Color(255, 255, 255));
+        loginBtnTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        loginBtnTxt.setText("ENTRAR");
+
+        javax.swing.GroupLayout loginBtnLayout = new javax.swing.GroupLayout(loginBtn);
+        loginBtn.setLayout(loginBtnLayout);
+        loginBtnLayout.setHorizontalGroup(
+            loginBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(loginBtnTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+        );
+        loginBtnLayout.setVerticalGroup(
+            loginBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(loginBtnTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        bg.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,6 +155,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel favicon;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JPanel loginBtn;
+    private javax.swing.JLabel loginBtnTxt;
     private javax.swing.JLabel logoname;
     private javax.swing.JLabel passLabel;
     private javax.swing.JPasswordField passTxt;
