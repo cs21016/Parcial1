@@ -19,6 +19,9 @@ public class Login extends javax.swing.JFrame {
         bg = new javax.swing.JPanel();
         logoname = new javax.swing.JLabel();
         citybg = new javax.swing.JLabel();
+        header = new javax.swing.JPanel();
+        exitBtn = new javax.swing.JPanel();
+        exitTxt = new javax.swing.JLabel();
         favicon = new javax.swing.JLabel();
         title = new javax.swing.JLabel();
         userLabel = new javax.swing.JLabel();
@@ -46,7 +49,43 @@ public class Login extends javax.swing.JFrame {
         bg.add(logoname, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 350, -1, -1));
 
         citybg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Parcial/imagenes/tienda.png"))); // NOI18N
-        bg.add(citybg, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 0, 752, 547));
+        bg.add(citybg, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 0, 770, 547));
+
+        header.setBackground(new java.awt.Color(255, 255, 255));
+
+        exitBtn.setBackground(new java.awt.Color(255, 255, 255));
+
+        exitTxt.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        exitTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        exitTxt.setText("X");
+        exitTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        exitTxt.setPreferredSize(new java.awt.Dimension(40, 40));
+
+        javax.swing.GroupLayout exitBtnLayout = new javax.swing.GroupLayout(exitBtn);
+        exitBtn.setLayout(exitBtnLayout);
+        exitBtnLayout.setHorizontalGroup(
+            exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+        );
+        exitBtnLayout.setVerticalGroup(
+            exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
+        header.setLayout(headerLayout);
+        headerLayout.setHorizontalGroup(
+            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(headerLayout.createSequentialGroup()
+                .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1125, Short.MAX_VALUE))
+        );
+        headerLayout.setVerticalGroup(
+            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exitBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        bg.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 40));
 
         favicon.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         favicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Parcial/imagenes/favicon.png"))); // NOI18N
@@ -86,6 +125,7 @@ public class Login extends javax.swing.JFrame {
         loginBtnTxt.setForeground(new java.awt.Color(255, 255, 255));
         loginBtnTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         loginBtnTxt.setText("ENTRAR");
+        loginBtnTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout loginBtnLayout = new javax.swing.GroupLayout(loginBtn);
         loginBtn.setLayout(loginBtnLayout);
@@ -152,7 +192,10 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JLabel citybg;
+    private javax.swing.JPanel exitBtn;
+    private javax.swing.JLabel exitTxt;
     private javax.swing.JLabel favicon;
+    private javax.swing.JPanel header;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPanel loginBtn;
