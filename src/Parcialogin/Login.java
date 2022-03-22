@@ -235,24 +235,32 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_loginBtnTxtMouseExited
 
     private void userTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userTxtMousePressed
-        //Comando setTxt para quitar (usuario) y reestablecer (contraseña) el texto
-        userTxt.setText("");
-        userTxt.setForeground(Color.black);
-        passTxt.setText("********");
-        passTxt.setForeground(Color.gray);
+        //Comando setTxt para quitar (usuario) y reestablecer (contraseña) el texto **Corregir que el contenido de los textfields se ponga vacío al darle un click 
+        if (userTxt.getText().equals("Ingrese su nombre de usuario")) {
+            userTxt.setText("");
+            userTxt.setForeground(Color.black);
+        }
+        if (String.valueOf(passTxt.getPassword()).isEmpty()) {
+            passTxt.setText("********");
+            passTxt.setForeground(Color.gray);
+        }
     }//GEN-LAST:event_userTxtMousePressed
 
     private void passTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passTxtMousePressed
-        //Repetimos lo anterior hecho solo que ahora se quita la contraseña y se reestablece el usuario
-        userTxt.setText("Ingrese su nombre de usuario");
-        userTxt.setForeground(Color.gray);
-        passTxt.setText("");
-        passTxt.setForeground(Color.black);
+        //Repetimos lo anterior hecho solo que ahora se quita la contraseña y se reestablece el usuario **Corregir que el contenido de los textfields se ponga vacío al darle un click 
+        if (String.valueOf(passTxt.getPassword()).equals("********")) {
+            passTxt.setText("");
+            passTxt.setForeground(Color.black);
+        }
+        if (userTxt.getText().isEmpty()) {
+            userTxt.setText("Ingrese su nombre de usuario");
+            userTxt.setForeground(Color.gray);
+        }
     }//GEN-LAST:event_passTxtMousePressed
 
     private void loginBtnTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnTxtMouseClicked
         //Mostrar una alerta cuando entre el mouse sobre el botón
-        javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuario: " + userTxt.getText() + "\nContraseña: " + String.valueOf(passTxt.getPassword()), "LOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        javax.swing.JOptionPane.showMessageDialog(this, "Los datos logeados son:\nUsuario: " + userTxt.getText() + "\nContraseña: " + String.valueOf(passTxt.getPassword()), "LOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_loginBtnTxtMouseClicked
 
     public static void main(String args[]) {
